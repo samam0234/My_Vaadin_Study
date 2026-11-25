@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: board
+      POSTGRES_USER: board
+      POSTGRES_PASSWORD: board
+    ports:
+      - "5432:5432"
+  mariadb:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: board
+      MARIADB_USER: board
+      MARIADB_PASSWORD: board
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"

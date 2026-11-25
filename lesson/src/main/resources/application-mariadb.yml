@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:mariadb://127.0.0.1:3306/board}
+    username: ${DB_USERNAME:board}
+    password: ${DB_PASSWORD:board}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect

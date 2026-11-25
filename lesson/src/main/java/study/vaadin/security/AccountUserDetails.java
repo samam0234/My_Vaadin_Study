@@ -1,0 +1,36 @@
+package study.vaadin.security;
+
+import java.util.Collection;
+import java.util.List;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import study.vaadin.domain.UserAccount;
+
+public class AccountUserDetails implements UserDetails {
+
+    private final UserAccount account;
+
+    public AccountUserDetails(UserAccount account) {
+        this.account = account;
+    }
+
+    public UserAccount account() {
+        return account;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + account.getRole()));
+    }
+
+    @Override
+    public String getPassword() {
+        return account.getPasswordHash();
+    }
+
+    @Override
+    public String getUsername() {
+        return account.getEmail();
+    }
+}

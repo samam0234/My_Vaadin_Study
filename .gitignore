@@ -1,0 +1,16 @@
+target/
+node_modules/
+.vaadin/
+.idea/
+*.iml
+.vscode/
+data/
+.env
+!.env.example
+lesson/.env
+lesson/node_modules/
+lesson/src/main/frontend/generated/
+lesson/vite.generated.ts
+*.log
+.DS_Store
+Thumbs.db

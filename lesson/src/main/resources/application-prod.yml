@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  devtools:
+    restart:
+      enabled: false
+
+server:
+  forward-headers-strategy: framework
+
+app:
+  mail-enabled: true

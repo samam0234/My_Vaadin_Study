@@ -1,0 +1,4 @@
+html {
+  background-color: var(--lumo-base-color, #ffffff);
+  color: var(--lumo-body-text-color, #1c1c1c);
+}
